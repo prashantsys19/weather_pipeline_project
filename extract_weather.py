@@ -79,3 +79,4 @@ def extract_and_load(cities):
 if __name__ == "__main__":
     target_cities = ["Pune", "New York", "London", "Tokyo"]
     extract_and_load(target_cities)
+
