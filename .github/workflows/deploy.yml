@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch: # <-- THIS ADDS A MANUAL RUN BUTTON ON GITHUB!
 
 jobs:
   deploy:
