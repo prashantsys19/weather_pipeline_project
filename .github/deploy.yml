@@ -7,7 +7,6 @@ on:
 
 jobs:
   deploy:
-    # This tells GitHub to run this script ON your Ubuntu server
     runs-on: self-hosted
 
     steps:
@@ -17,12 +16,10 @@ jobs:
       - name: 🚀 Deploy to Production Folders
         run: |
           echo "Setting up pipeline directory..."
-          mkdir -p /home/ubuntu/data_pipeline
+          mkdir -p /home/vagrant/data_pipeline
           
           echo "Copying Python extractor..."
-          cp extract_weather.py /home/ubuntu/data_pipeline/
+          cp extract_weather.py /home/vagrant/data_pipeline/
           
           echo "Copying requirements..."
-          cp requirements.txt /home/ubuntu/data_pipeline/
-          
-          # Note: We will add the Airflow DAG copy command here in Step 4!
+          cp requirements.txt /home/vagrant/data_pipeline/
