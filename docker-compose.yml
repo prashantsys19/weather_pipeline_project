@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  dev_postgres:
+    image: postgres:15-alpine
+    container_name: dev_postgres
+    environment:
+      POSTGRES_USER: de_admin
+      POSTGRES_PASSWORD: de_admin
+      POSTGRES_DB: de_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_dev:/var/lib/postgresql/data
+
+volumes:
+  pgdata_dev:

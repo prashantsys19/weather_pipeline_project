@@ -1,0 +1,10 @@
+# Environments
+env/
+venv/
+.env
+
+# Data and OS files
+*.csv
+*.json
+__pycache__/
+.DS_Store

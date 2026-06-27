@@ -1,0 +1,28 @@
+name: Deploy Pipeline to Ubuntu Prod
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    # This tells GitHub to run this script ON your Ubuntu server
+    runs-on: self-hosted
+
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🚀 Deploy to Production Folders
+        run: |
+          echo "Setting up pipeline directory..."
+          mkdir -p /home/ubuntu/data_pipeline
+          
+          echo "Copying Python extractor..."
+          cp extract_weather.py /home/ubuntu/data_pipeline/
+          
+          echo "Copying requirements..."
+          cp requirements.txt /home/ubuntu/data_pipeline/
+          
+          # Note: We will add the Airflow DAG copy command here in Step 4!
